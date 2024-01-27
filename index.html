@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Admin Layout</title>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <h1>This is the sidebar</h1>
+            <p>The quick brown fox jumps over the lazy dog</p>
+            <p>some dummy navigation tabs...</p>
+        </aside>
+        <header class="top-nav">
+            <h4>This is the header or the top navigation</h4>
+        </header>
+        <main class="main">
+            <h1>This is the main interface of the admin layout</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut vel facere
+                blanditiis commodi totam, quae sequi consequuntur illo nemo enim, debitis quaerat
+                nam veniam natus beatae fuga? Fugiat, sapiente!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut vel facere
+                blanditiis commodi totam, quae sequi consequuntur illo nemo enim, debitis quaerat
+                nam veniam natus beatae fuga? Fugiat, sapiente!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut vel facere
+                blanditiis commodi totam, quae sequi consequuntur illo nemo enim, debitis quaerat
+                nam veniam natus beatae fuga? Fugiat, sapiente!
+            </p>
+
+            <footer class="footer">this the footer</footer>
+        </main>
+
+        <script>
+            // Adjust the body's padding based on the height of the fixed header
+            function adjustBodyPadding() {
+                const headerHeight = document.querySelector(".top-nav").offsetHeight;
+                document.querySelector(".main").style.marginTop = headerHeight + "px";
+            }
+
+            // Initial adjustment on page load
+            window.addEventListener("load", adjustBodyPadding);
+
+            // Re-adjust if the window is resized
+            window.addEventListener("resize", adjustBodyPadding);
+        </script>
+    </body>
+</html>

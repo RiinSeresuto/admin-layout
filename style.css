@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+:root {
+    --sidebar-width: 260px;
+}
+
+body {
+    background-color: rgb(127, 150, 150);
+
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "sidebar top-nav"
+        "sidebar main";
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(143, 130, 75);
+    padding: 16px;
+
+    position: fixed;
+    height: 100%;
+    width: var(--sidebar-width);
+    overflow-y: auto; /* Enable vertical scrolling for the sidebar */
+}
+
+.top-nav {
+    grid-area: top-nav;
+    background-color: rgb(235, 180, 135);
+    padding: 16px;
+
+    position: fixed;
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width); /* Adjust for the sidebar width */
+    z-index: 100;
+}
+
+/*
+IF YOU DO NOT WANT TO HAVE FIXED TOP NAVIGATION
+.top-nav {
+    grid-area: top-nav;
+    background-color: rgb(235, 180, 135);
+    padding: 16px;
+}
+
+
+*/
+
+.main {
+    grid-area: main;
+    background-color: rgb(123, 96, 145);
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    padding: 16px 0;
+    margin-top: auto;
+}
